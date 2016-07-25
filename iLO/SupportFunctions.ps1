@@ -40,7 +40,7 @@ function Get-iLOGeneration{
     [ValidateNotNullOrEmpty()]
 	[string]$iLO)
 
-    $PN = (Find-HPiLO -Range $iLO -WarningAction SilentlyContinue).PN
+    $PN = (Find-HPiLO -Range ([System.Net.Dns]::GetHostAddresses($iLO).IPAddressToString) -WarningAction SilentlyContinue).PN
 
     switch ($PN) {
   { $_ -like "*(iLO 2)*" } { "2" }
