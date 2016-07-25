@@ -39,6 +39,7 @@
     <Compile Include="iLO.psm1" />
     <Compile Include="iLO.tests.ps1" />
     <Compile Include="Install-iLOCertificate.ps1" />
+    <Compile Include="Set-iLOAuthentication.ps1" />
     <Compile Include="SupportFunctions.ps1" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
