@@ -94,7 +94,10 @@ PROCESS {
 
 				$displayMessage = $false
 
-				If($dinfo.DIR_GRPACCT3_NAME -ne ""){
+				Write-Verbose "Getting Directory Information"
+				$dinfo = Get-HPiLODirectory -Server $h -Username $username -Password $UserPassword
+
+				If($dinfo.DIR_GRPACCT3_NAME -ne $null){
 
 					Write-Verbose "Setting Schemaless Directory Group 3 Information "
 					Set-HPiLOSchemalessDirectory -Server $h -Username $username -Password $UserPassword -Group3Name "DeleteMe3" -Group3Priv "" -Group3SID ""
@@ -103,7 +106,7 @@ PROCESS {
 
 				}
 
-				If($dinfo.DIR_GRPACCT4_NAME -ne ""){
+				If($dinfo.DIR_GRPACCT4_NAME -ne $null){
 
 					Write-Verbose "Setting Schemaless Directory Group 4 Information "
 					Set-HPiLOSchemalessDirectory -Server $h -Username $username -Password $UserPassword -Group4Name "DeleteMe4" -Group4Priv "" -Group4SID ""
@@ -120,8 +123,7 @@ PROCESS {
 				Write-Verbose "Setting Schemaless Directory Group 2 Information "
 				Set-HPiLOSchemalessDirectory -Server $h -Username $username -Password $UserPassword -Group2Name "CN=OSCITSERVERADMIN,OU=Users,OU=OSCA,DC=courts,DC=state,DC=mo,DC=us" -Group2Priv "1,2,3,4,5" -Group2SID ""
 
-				Write-Verbose "Getting Directory Information"
-				$dinfo = Get-HPiLODirectory -Server $h -Username $username -Password $UserPassword
+
 
 
 			
