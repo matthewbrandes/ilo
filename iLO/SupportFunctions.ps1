@@ -43,12 +43,10 @@ function Get-iLOGeneration{
     $PN = (Find-HPiLO -Range ([System.Net.Dns]::GetHostAddresses($iLO).IPAddressToString) -WarningAction SilentlyContinue).PN
 
     switch ($PN) {
-  { $_ -like "*(iLO 2)*" } { "2" }
-  { $_ -like "*(iLO 3)*" } { "3" }
-  { $_ -like "*(iLO 4)*" } { "4" }
-  default {0}
-    }
-
-
+	  { $_ -like "*(iLO 2)*" } { "2" }
+	  { $_ -like "*(iLO 3)*" } { "3" }
+	  { $_ -like "*(iLO 4)*" } { "4" }
+	  default {0}
+		}
 
 }
