@@ -1,7 +1,7 @@
 #Requires -Version 3.0
 
 
-function Configure-iLO {
+function Initialize-iLOConfiguration {
 	
 	[CmdletBinding(PositionalBinding = $false)]
 param (

@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup />
   <ItemGroup>
-    <Compile Include="Configure-iLO.ps1" />
+    <Compile Include="Initialize-iLOConfiguration.ps1" />
     <Compile Include="iLO.psd1" />
     <Compile Include="iLO.psm1" />
     <Compile Include="iLO.tests.ps1" />
