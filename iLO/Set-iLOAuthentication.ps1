@@ -15,7 +15,7 @@ function Set-iLOAuthentication {
 
 .PARAMETER UserName
 
-    A user name with administrative access to the iLO(s) where we are installing the SSL certificate.  
+    A user name with administrative access to the iLO(s) where we are configuring authentication.  
 	Only a single UserName may be specified, meaning this user must have access to all iLO's if multiple are specified.
 	This is a mandatory parameter with no default.
 
