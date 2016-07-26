@@ -76,6 +76,9 @@ param (
 	)
 BEGIN {
 
+	#Disable iLO Checking For Valid Certificates
+	Disable-HPiLOCertificateAuthentication
+
 } # end BEGIN block
 
 PROCESS {
