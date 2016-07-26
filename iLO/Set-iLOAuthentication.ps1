@@ -5,11 +5,11 @@ function Set-iLOAuthentication {
 <#
 .SYNOPSIS
 
-	Configures authentication settings on an iLO.  
+	Configures authentication settings on one or more iLO(s).  
 	
 .PARAMETER HostName
 
-    The iLO(s) where we should install configure authentication.  
+    The iLO(s) where we should configure authentication.  
 	Multiple iLO's may be specified and they will be processed in the order received.
 	This is a mandatory parameter with no default.
 
