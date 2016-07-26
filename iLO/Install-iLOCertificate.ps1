@@ -47,10 +47,14 @@ function Install-iLOCertificate {
 	Accepts iLO(s), Administrative Username, and Associated Password from the PipeLine.
 
 .OUTPUTS
+
 	NONE
 
 .NOTES
+
 	Only supported on the iLO3 or higher.
+
+	Because installing a new certificate requires the iLO to restart its web server, there can be some delay before it is able to process the next command.
 #>
 
 [CmdletBinding(PositionalBinding = $true)]
