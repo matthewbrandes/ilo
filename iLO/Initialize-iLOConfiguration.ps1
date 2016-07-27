@@ -58,21 +58,24 @@ function Initialize-iLOConfiguration {
 
 #>
 	
-	[CmdletBinding(PositionalBinding = $false)]
+[CmdletBinding(PositionalBinding = $true)]
 param (
-	[Parameter(ValueFromPipeline = $true,
+	[Parameter(Position = 0,
+		ValueFromPipeline = $true,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
-		[Alias('Computer', 'iLO')]
-		[string[]]$Hostname,
+		[Alias('Hostname', 'iLO')]
+		[string[]]$IP,
 	
-	[Parameter(ValueFromPipeline = $true,
+	[Parameter(Position = 1,
+		ValueFromPipeline = $true,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('AdminUser')]
 		[string]$UserName,
 
-	[Parameter(ValueFromPipeline = $true,
+	[Parameter(Position = 2,
+		ValueFromPipeline = $true,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('AdminPassword')]
@@ -85,9 +88,9 @@ BEGIN {
 
 PROCESS {
 	
-	Set-iLOAuthentication -Hostname $Hostname -UserName $UserName -UserPassword $UserPassword
+	Set-iLOAuthentication -IP $IP -UserName $UserName -UserPassword $UserPassword
 
-	Install-iLOCertificate -Hostname $Hostname -UserName $UserName -UserPassword $UserPassword
+	Install-iLOCertificate -IP $IP -UserName $UserName -UserPassword $UserPassword
 
 } # end PROCESS block
 

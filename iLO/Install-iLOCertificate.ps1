@@ -63,8 +63,8 @@ param (
 		ValueFromPipeline = $true,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
-		[Alias('Computer', 'iLO')]
-		[string[]]$Hostname,
+		[Alias('Hostname', 'iLO')]
+		[string[]]$IP,
 	
 	[Parameter(Position = 1,
 		ValueFromPipeline = $true,
@@ -95,7 +95,7 @@ BEGIN {
 PROCESS {
 
 	#Loop Through All Hosts Passed In
-	foreach ($h in $Hostname) {
+	foreach ($h in $IP) {
 
 		try {
 
