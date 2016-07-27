@@ -61,21 +61,18 @@ function Initialize-iLOConfiguration {
 [CmdletBinding(PositionalBinding = $true)]
 param (
 	[Parameter(Position = 0,
-		ValueFromPipeline = $true,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('Hostname', 'iLO')]
 		[string[]]$IP,
 	
 	[Parameter(Position = 1,
-		ValueFromPipeline = $true,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('AdminUser')]
 		[string]$UserName,
 
 	[Parameter(Position = 2,
-		ValueFromPipeline = $true,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('AdminPassword')]

@@ -55,19 +55,19 @@ function Set-iLOAuthentication {
 	
 	[CmdletBinding(PositionalBinding = $false)]
 param (
-	[Parameter(ValueFromPipeline = $true,
+	[Parameter(Position = 0,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('HostName', 'iLO')]
 		[string[]]$IP,
 	
-	[Parameter(ValueFromPipeline = $true,
+	[Parameter(Position = 1,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('AdminUser')]
 		[string]$UserName,
 
-	[Parameter(ValueFromPipeline = $true,
+	[Parameter(Position = 2,
 		ValueFromPipelineByPropertyName = $true)]
 		[ValidateNotNullOrEmpty()]
 		[Alias('AdminPassword')]
